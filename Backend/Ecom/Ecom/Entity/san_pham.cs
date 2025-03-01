@@ -11,6 +11,10 @@ namespace Ecom.Entity
         public string? mo_ta { get; set; }
         public string? xuat_xu { get; set; }
         public int? luot_ban { get; set; }
-        public virtual danh_muc_san_pham danh_muc_san_pham { get; set; }
+        public string sku { get; set; }
+        public string? mau_sac { get; set; }
+        public string? size { get; set; }
+        public bool? is_active { get; set; } = true;
+        public virtual danh_muc danh_Muc { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 import { ChangeEvent, FunctionComponent, KeyboardEvent, ReactNode, useEffect, useRef } from "react";
 import "./form-input.scss";
-import { Input, Form, Typography } from "antd";
+import { Input, Typography } from "antd";
 import { InputStatus } from "antd/es/_util/statusUtils";
 import { CloseOutlined } from "@ant-design/icons";
 
@@ -18,7 +18,7 @@ type FormItemInputProps = {
   passwordInput?: boolean;
   onKeyPress?: (e: KeyboardEvent<HTMLInputElement>) => void;
   disabled?: boolean;
-  style?: any;
+  style?: React.CSSProperties;
   status?: InputStatus;
   type?: string;
   required?: boolean;
@@ -85,14 +85,9 @@ const FormItemInput: FunctionComponent<FormItemInputProps> = ({
   };
 
   return (
-    <Form.Item
-      name={formItemName}
-      className="form-item form-item-custom"
-      required={required} // Set required to show the asterisk in the label
-      rules={required ? [{ required: true, message: `${label} is required` }] : []}
-    >
+    <div className="ant-form-item-control-input-content">
+    <div className="form-item form-item-custom">
       <Typography.Text style={labelStyle || { fontSize: "16px" }}>{label}</Typography.Text>
-{/*fromRender+' '+valueRender+' '+value*/}
       <Input
         prefix={prefix}
         onBlur={handleChangeBlur}
@@ -101,7 +96,7 @@ const FormItemInput: FunctionComponent<FormItemInputProps> = ({
         addonAfter={afterPrefixIcon}
         value={value}
         //value={fromRender === true ? valueRender : value}
-        style={style}
+        style={{width:"100%"}}
         readOnly={readOnly}
         suffix={suffix}
         status={status}
@@ -119,7 +114,8 @@ const FormItemInput: FunctionComponent<FormItemInputProps> = ({
         {...rest}
         className={`form-input ${className ?? ''}`}
       />
-    </Form.Item>
+    </div>
+    </div>
   );
 };
 

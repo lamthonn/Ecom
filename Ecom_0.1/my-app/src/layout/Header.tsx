@@ -17,6 +17,10 @@ const HeaderLayout = () => {
       className="header-layout"
       style={{ padding: 0, background: "var(--color-primary-1)" }}
     >
+      <div className="left-header">
+        <img src="/images/logo2.png" alt="Delias Logo" style={{width:"12%"}}/>
+      </div>
+
       <div className="right-header">
         <div className="thong-bao">
           <Badge count={5}>
@@ -27,7 +31,7 @@ const HeaderLayout = () => {
         <Dropdown menu={{ items: itemsMenu }} trigger={['click']}>
             <a onClick={(e) => e.preventDefault()}>
                 <Space>
-                    <Avatar icon={<UserOutlined />} /> Người Dùng 1
+                    <Avatar icon={<UserOutlined />} /> Administrator
                 </Space>
             </a>
         </Dropdown>

@@ -84,9 +84,7 @@ const FormInputNumber: FunctionComponent<FormInputNumberProps> = ({
   };
 
   return (
-    <Form.Item className="form-item"  name="inputNumber"
-      validateStatus={isError ? "error" : ""}
-      help={isError ? errorMessage : ""}
+    <div className="form-item"
       style={isError ? {borderColor:"red"} : {}}
       >
       <Typography.Text style={{ fontSize: '16px' }}>{label}</Typography.Text>
@@ -130,7 +128,7 @@ const FormInputNumber: FunctionComponent<FormInputNumberProps> = ({
           />
         )}
       </div>
-    </Form.Item>
+    </div>
   );
 };
 

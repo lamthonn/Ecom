@@ -1,7 +1,11 @@
 export const routesConfig = {
     //Dashboard
-    dashboard: "/seller-center/dashboard",
+    trangChu: "/trang-chu",
+    //Cửa hàng
+    cuaHang: "/cua-hang",
+    //Giỏ hàng
+    gioHang: "/gio-hang",
     
     //Common Component
-    testComponent: "/seller-center/test-component",
+    testComponent: "/test-component",
 }

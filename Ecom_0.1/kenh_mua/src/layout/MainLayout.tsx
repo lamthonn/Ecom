@@ -8,8 +8,9 @@ import "./HeaderLayout.scss"
 
 const { Content, Footer, Sider } = Layout;
 
-const MainLayout: React.FC<{children?: React.ReactNode }> = ({
-  children
+const MainLayout: React.FC<{children?: React.ReactNode, breadcrumb: string[] }> = ({
+  children,
+  breadcrumb
 }) => {
   const location = useLocation(); // Lấy thông tin route hiện tại
   
@@ -24,14 +25,17 @@ const MainLayout: React.FC<{children?: React.ReactNode }> = ({
       <HeaderLayout />
       <Content style={{ padding: '0 48px', }}>
         <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
+        {
+          breadcrumb.map((item)=> {
+            return (<Breadcrumb.Item>{item}</Breadcrumb.Item>)
+          })
+        }
+          
         </Breadcrumb>
         <div
           style={{
             backgroundColor: "#FFFFFF",
-            minHeight: 280,
+            minHeight: "75vh",
             padding: 24,
             borderRadius: 5,
           }}
@@ -40,7 +44,7 @@ const MainLayout: React.FC<{children?: React.ReactNode }> = ({
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©{new Date().getFullYear()} Created by Ant UED
+        Delias ©{new Date().getFullYear()} Created by Lâm Vũ
       </Footer>
     </Layout>
   );

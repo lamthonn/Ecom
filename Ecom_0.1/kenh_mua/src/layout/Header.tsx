@@ -11,8 +11,11 @@ const HeaderLayout: React.FC = () => {
   const navigate = useNavigate();
 
   const handleChangeMenu: MenuProps["onClick"] = (item: any) => {
-    if (item.key === "dashboard") {
-      navigate(routesConfig.dashboard);
+    if (item.key === "trang-chu") {
+      navigate(routesConfig.trangChu);
+    }
+    if (item.key === "cua-hang") {
+      navigate(routesConfig.cuaHang);
     }
     if (item.key === "test-component") {
       navigate(routesConfig.testComponent);
@@ -46,7 +49,7 @@ const HeaderLayout: React.FC = () => {
         <img
           src="/images/logo_removeBg.png"
           alt="Delias Logo"
-          style={{ width: "10%", color: "#FFF" }}
+          style={{ width: "10%", margin:"20px 0", color: "#FFF" }}
         />
         <Menu
           mode="horizontal"
@@ -58,7 +61,7 @@ const HeaderLayout: React.FC = () => {
         
         <div className="header-user">
             <Tooltip title="Giỏ hàng">
-                <Avatar icon={<ShoppingCartOutlined />} style={{ marginRight:"10px", cursor:"pointer"}} /> 
+                <Avatar icon={<ShoppingCartOutlined />} style={{ marginRight:"10px", cursor:"pointer"}} onClick={() => {navigate(routesConfig.gioHang)}}/> 
             </Tooltip>
             <Dropdown menu={{ items }} trigger={['click']}>
                 <a onClick={(e) => e.preventDefault()}>

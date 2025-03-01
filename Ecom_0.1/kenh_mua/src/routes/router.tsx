@@ -1,13 +1,14 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import React from 'react';
-import Dashboard from "../pages/admin-page/Dashboard/index";
 import LoginPage from "../pages/login";
 import RegisterPage from "../pages/register";
-import AdminLogin from "../pages/admin-page/Authen/AdminLogin";
 import NotFoundPage from "../notFoundPage";
-import TestComponent from "../pages/admin-page/TestComponent";
+import TestComponent from "../pages/TestComponent";
 import { routesConfig } from "./routes";
 import MainLayout from "../layout/MainLayout";
+import TrangChu from "../pages/trang-chu";
+import CuaHang from "../pages/cua-hang";
+import GioHang from "../pages/gio-hang";
 
 export const router = createBrowserRouter([
   //người mua
@@ -19,11 +20,39 @@ export const router = createBrowserRouter([
     path: "register",
     element: <RegisterPage />
   },
+
+  //cửa hàng
   {
-    path: "trang-chu",
+    path: routesConfig.cuaHang,
     element: (
-      <MainLayout>
-        <>trang chủ</>
+      <MainLayout breadcrumb = {["Trang chủ", "Cửa hàng"]}>
+        <CuaHang />
+      </MainLayout>
+    )
+  },
+  //trang chủ
+  {
+    path: routesConfig.trangChu,
+    element: (
+      <MainLayout breadcrumb = {["Trang chủ"]}>
+        <TrangChu />
+      </MainLayout>
+    )
+  },
+  //giỏ hàng
+  {
+    path: routesConfig.gioHang,
+    element: (
+      <MainLayout breadcrumb = {["Trang chủ", "Giỏ hàng"]}>
+        <GioHang />
+      </MainLayout>
+    )
+  },
+  {
+    path: routesConfig.testComponent,
+    element: (
+      <MainLayout breadcrumb={["Trang chủ", "Test component"]}>
+        <TestComponent />
       </MainLayout>
     )
   },

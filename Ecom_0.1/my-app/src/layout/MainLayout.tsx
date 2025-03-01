@@ -73,7 +73,7 @@ const MainLayout: React.FC<{children?: React.ReactNode }> = ({
             borderTop: "1px solid var(--color-primary-2)"
           }}
         >
-          Ant Design ©{new Date().getFullYear()} Created by Vũ Vương Lâm
+          Delias ©{new Date().getFullYear()} Created by Vũ Vương Lâm
         </Footer>
       </Layout>
     </Layout>

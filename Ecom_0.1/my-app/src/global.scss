@@ -1,6 +1,8 @@
 @import "styles/themes.scss";
 @import "styles/variables.scss";
-
+*{
+    font-size: 16px;
+}
 .ant-menu-item,
 .ant-menu{
     background-color: var(--color-primary-9) !important;
@@ -19,4 +21,13 @@
 
 .ant-btn-color-primary{
     background-color: var(--color-primary-7) !important;
+}
+
+.ant-layout{
+    margin-inline-start: 130px !important;
+}
+
+.ant-layout-sider{
+    max-width: 255px !important;
+    width: 255px !important;
 }

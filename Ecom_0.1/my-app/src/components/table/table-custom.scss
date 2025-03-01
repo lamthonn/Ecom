@@ -1,0 +1,9 @@
+.table-custom{
+    
+    .table-custom-style{
+        background-color: #fff;
+        .ant-table {
+            border: 1px solid var(--border-color) !important;
+        }
+    }
+}
